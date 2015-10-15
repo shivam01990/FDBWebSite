@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FDBMasterSecure.master.cs" Inherits="FDBWeb.FDBMasterSecure" %>
+
+<%@ Register Src="~/Controls/Navigation.ascx" TagName="Navigation" TagPrefix="uc1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Shivam Srivastava">
+    <title>FDB</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="<%=Page.ResolveUrl("~") %>Style/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="<%=Page.ResolveUrl("~") %>Style/sb-admin.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="<%=Page.ResolveUrl("~") %>Style/plugins/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="<%=Page.ResolveUrl("~") %>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <uc1:Navigation ID="Navigation1" runat="server" />
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+    </form>
+    <!-- jQuery -->
+    <script src="<%=Page.ResolveUrl("~") %>Scripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<%=Page.ResolveUrl("~") %>Scripts/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="<%=Page.ResolveUrl("~") %>Scripts/plugins/morris/raphael.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~") %>Scripts/plugins/morris/morris.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~") %>Scripts/plugins/morris/morris-data.js"></script>
+    <asp:ContentPlaceHolder ID="JsPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
