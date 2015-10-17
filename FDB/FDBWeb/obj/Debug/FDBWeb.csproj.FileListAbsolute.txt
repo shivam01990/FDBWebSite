@@ -1,6 +1,14 @@
 D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBWeb.dll.config
 D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBWeb.dll
 D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBWeb.pdb
-D:\Development Area\FDBWebSite\FDB\FDBWeb\obj\Debug\FDBWeb.csprojResolveAssemblyReference.cache
 D:\Development Area\FDBWebSite\FDB\FDBWeb\obj\Debug\FDBWeb.dll
 D:\Development Area\FDBWebSite\FDB\FDBWeb\obj\Debug\FDBWeb.pdb
+D:\Development Area\FDBWebSite\FDB\FDBWeb\obj\Debug\FDBWeb.csprojResolveAssemblyReference.cache
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBBLL.dll
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBDAL.dll
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.dll
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBBLL.pdb
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBDAL.pdb
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.xml
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.SqlServer.dll
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.SqlServer.xml

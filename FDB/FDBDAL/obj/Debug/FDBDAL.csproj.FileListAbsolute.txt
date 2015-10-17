@@ -1,0 +1,10 @@
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\FDBDAL.dll
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\FDBDAL.pdb
+D:\Development Area\FDBWebSite\FDB\FDBDAL\obj\Debug\FDBDAL.csprojResolveAssemblyReference.cache
+D:\Development Area\FDBWebSite\FDB\FDBDAL\obj\Debug\FDBDAL.dll
+D:\Development Area\FDBWebSite\FDB\FDBDAL\obj\Debug\FDBDAL.pdb
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\FDBDAL.dll.config
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\EntityFramework.dll
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\EntityFramework.xml
+D:\Development Area\FDBWebSite\FDB\FDBDAL\bin\Debug\EntityFramework.SqlServer.xml

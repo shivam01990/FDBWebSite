@@ -38,7 +38,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,6 +71,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Login.aspx" />
     <Content Include="MedicinePrice.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -93,12 +103,26 @@
     <Compile Include="Controls\Navigation.ascx.designer.cs">
       <DependentUpon>Navigation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="FDB.Master.cs">
+      <DependentUpon>FDB.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FDB.Master.designer.cs">
+      <DependentUpon>FDB.Master</DependentUpon>
+    </Compile>
     <Compile Include="FDBMasterSecure.Master.cs">
       <DependentUpon>FDBMasterSecure.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FDBMasterSecure.Master.designer.cs">
       <DependentUpon>FDBMasterSecure.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MedicinePrice.aspx.cs">
       <DependentUpon>MedicinePrice.aspx</DependentUpon>
@@ -145,6 +169,8 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <Content Include="FDB.Master" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,7 +178,15 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FDBBLL\FDBBLL.csproj">
+      <Project>{f435616a-fa12-409f-99e5-a2a43fe6f0bc}</Project>
+      <Name>FDBBLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
