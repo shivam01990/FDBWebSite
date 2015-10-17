@@ -18,13 +18,12 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtUserName" CssClass="form-control" placeholder="User Name" type="text" autofocus runat="server"></asp:TextBox>
-                                    <%--       <asp:RequiredFieldValidator ID="ReqEmail" Display="Dynamic" ControlToValidate="txtUserName" ForeColor="Red" ValidationGroup="ValLogin" runat="server" ErrorMessage="Please enter your email"></asp:RequiredFieldValidator>
-                                    --%>
+                                    <asp:RequiredFieldValidator ID="ReqEmail" Display="Dynamic" ControlToValidate="txtUserName" ForeColor="Red" ValidationGroup="ValLogin" runat="server" ErrorMessage="Please enter your email"></asp:RequiredFieldValidator>
+
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtPassword" CssClass="form-control" placeholder="Password" type="password" runat="server"></asp:TextBox>
-                                    <%--        <asp:RequiredFieldValidator ID="ReqPwd" Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red" ValidationGroup="ValLogin" runat="server" ErrorMessage="Please enter your Password"></asp:RequiredFieldValidator>
-                                    --%>
+                                    <asp:RequiredFieldValidator ID="ReqPwd" Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red" ValidationGroup="ValLogin" runat="server" ErrorMessage="Please enter your Password"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="checkbox">
                                     <label>
