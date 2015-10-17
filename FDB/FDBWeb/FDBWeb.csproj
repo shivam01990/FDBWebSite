@@ -71,6 +71,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="MedicinePrice.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -93,7 +94,9 @@
     <Content Include="Style\plugins\morris.css" />
     <Content Include="Style\sb-admin-rtl.css" />
     <Content Include="Style\sb-admin.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Navigation.ascx.cs">
@@ -116,6 +119,9 @@
     </Compile>
     <Compile Include="FDBMasterSecure.Master.designer.cs">
       <DependentUpon>FDBMasterSecure.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
