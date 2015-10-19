@@ -23,7 +23,7 @@
                                 <img class="media-object" src="http://placehold.it/50x50" alt="">
                             </span>
                             <div class="media-body">
-                                <h5 class="media-heading"><strong>John Smith</strong>
+                                <h5 class="media-heading"><strong><%=FDBBLL.authHelper.Instance.GetLogedInUserFromCookie().Name.ToString() %></strong>
                                 </h5>
                                 <p class="small text-muted"><i class="fa fa-clock-o"></i>Yesterday at 4:32 PM</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -38,7 +38,7 @@
                                 <img class="media-object" src="http://placehold.it/50x50" alt="">
                             </span>
                             <div class="media-body">
-                                <h5 class="media-heading"><strong>John Smith</strong>
+                                <h5 class="media-heading"><strong><%=FDBBLL.authHelper.Instance.GetLogedInUserFromCookie().Name.ToString() %></strong>
                                 </h5>
                                 <p class="small text-muted"><i class="fa fa-clock-o"></i>Yesterday at 4:32 PM</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -53,7 +53,7 @@
                                 <img class="media-object" src="http://placehold.it/50x50" alt="">
                             </span>
                             <div class="media-body">
-                                <h5 class="media-heading"><strong>John Smith</strong>
+                                <h5 class="media-heading"><strong><%=FDBBLL.authHelper.Instance.GetLogedInUserFromCookie().Name.ToString() %></strong>
                                 </h5>
                                 <p class="small text-muted"><i class="fa fa-clock-o"></i>Yesterday at 4:32 PM</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -94,20 +94,12 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>John Smith <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%=FDBBLL.authHelper.Instance.GetLogedInUserFromCookie().Name.ToString() %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i>Profile</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-envelope"></i>Inbox</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-gear"></i>Settings</a>
-                </li>
+                
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
+                    <a href="<%=Page.ResolveUrl("~") %>Logout.aspx"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
                 </li>
             </ul>
         </li>
@@ -119,7 +111,7 @@
                 <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-plus-square-o"></i>Medicine Price</a>
             </li>
             <li>
-                <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-money"></i>NDC Discount</a>
+                <a href="<%=Page.ResolveUrl("~") %>NDCDiscounts.aspx"><i class="fa fa-fw fa-money"></i>NDC Discount</a>
             </li>
             <li>
                 <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-star-o"></i>Facility</a>

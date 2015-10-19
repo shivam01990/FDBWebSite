@@ -1,15 +1,15 @@
-﻿using System;
+﻿using FDBBLL;
+using FDBDAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using FDBDAL;
-using FDBBLL;
 
 namespace FDBWeb
 {
-    public partial class MedicinePrice : System.Web.UI.Page
+    public partial class NDCDiscounts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace FDBWeb
         #region ---Bind Offers---
         public void BindGrid()
         {
-            List<NDC_M_PRICE> NDCList = NDC_M_PriceService.Instance.GetNDCPrice(txtNDC.Text.Trim());           
+            List<NDC_Discounts> NDCList = NDCDiscountsServices.Instance.GetNDCDiscounts(0, txtNDC.Text.Trim());
             GrdOffers.DataSource = NDCList;
             GrdOffers.DataBind();
         }

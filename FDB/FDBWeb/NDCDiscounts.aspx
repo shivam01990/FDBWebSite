@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FDBMasterSecure.Master" AutoEventWireup="true" CodeBehind="MedicinePrice.aspx.cs" Inherits="FDBWeb.MedicinePrice" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FDBMasterSecure.Master" AutoEventWireup="true" CodeBehind="NDCDiscounts.aspx.cs" Inherits="FDBWeb.NDCDiscounts" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -6,7 +6,7 @@
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Medicine Price
+            <h1 class="page-header">NDC Discount
             </h1>
             <%-- <ol class="breadcrumb">
                 <li class="active">
@@ -21,7 +21,7 @@
                         <div class="col-md-5">
                             Medicines   
                         </div>
-                        <%--      <asp:LinkButton ID="lnkAddNew" runat="server" ToolTip="Add New Offer" PostBackUrl="~/OfferManager/Offer.aspx" CssClass="btn btn-default btn-xs pull-right">  <i class="fa fa-plus"></i></asp:LinkButton>--%>
+                        <asp:LinkButton ID="lnkAddNew" runat="server" ToolTip="Add New NDC Discount" PostBackUrl="~/NDCDiscount.aspx" CssClass="btn btn-default btn-xs pull-right">  <i class="fa fa-plus"></i></asp:LinkButton>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -61,38 +61,44 @@
                         </div>
                         <div class="table-responsive">
                             <asp:GridView ID="GrdOffers" ShowHeaderWhenEmpty="true" AllowSorting="true" ShowHeader="true" ShowFooter="false" CssClass="table table-striped table-bordered table-hover"
-                                AllowPaging="true" PageSize="25" OnPageIndexChanging="GrdOffers_PageIndexChanging" OnRowDeleting="GrdOffers_RowDeleting"
+                                AllowPaging="true" PageSize="10" OnPageIndexChanging="GrdOffers_PageIndexChanging" OnRowDeleting="GrdOffers_RowDeleting"
                                 GridLines="None" OnRowDataBound="GrdOffers_RowDataBound" OnRowCommand="GrdOffers_RowCommand" OnSorting="GrdOffers_Sorting"
                                 EmptyDataText="<div class='empty-data'>No Records Founds</div>" AutoGenerateColumns="false" runat="server">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="NDC">
+                                    <asp:TemplateField HeaderText="NDC_DiscountID">
                                         <HeaderStyle CssClass="col-md-1" />
                                         <ItemStyle CssClass="col-md-1" />
                                         <ItemTemplate>
-                                            <%#Eval("NDC").ToString() %>
+                                            <%#Eval("NDC_DiscountID").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="NPT TYPE">
+                                    <asp:TemplateField HeaderText="NDC">
                                         <HeaderStyle CssClass="col-md-2" />
                                         <ItemStyle CssClass="col-md-2" />
                                         <ItemTemplate>
-                                            <%#Eval("NPT_TYPE")==null?"":Eval("NPT_TYPE").ToString() %>
+                                            <%#Eval("NDC")==null?"":Eval("NDC").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="NPT DATEC">
+                                    <asp:TemplateField HeaderText="Discount Percent">
                                         <HeaderStyle CssClass="col-md-1" />
                                         <ItemStyle CssClass="col-md-1" />
                                         <ItemTemplate>
-                                            <%#Eval("NPT_DATEC")==null?"":Eval("NPT_DATEC").ToString() %>
+                                            <%#Eval("Discount_Percent")==null?"":Eval("Discount_Percent").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="NPT PRICEX">
+                                    <asp:TemplateField HeaderText="FacilityID">
                                         <HeaderStyle CssClass="col-md-1" />
                                         <ItemStyle CssClass="col-md-1" />
                                         <ItemTemplate>
-                                            <%#Eval("NPT_PRICEX")==null?"":Eval("NPT_PRICEX").ToString() %>
+                                            <%#Eval("FacilityID")==null?"":Eval("FacilityID").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                     <asp:TemplateField HeaderText="Action">
+                                    <ItemTemplate>
+                                        <a href="NDCDiscount.aspx?id=<%# Eval("NDC_DiscountID").ToString() %>" class="btn btn-primary">Edit</a>
+                                        <asp:LinkButton ID="LnkDelete" Text="Delete" runat="server" CssClass="btn btn-danger"></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 </Columns>
                                 <PagerStyle HorizontalAlign="Right" CssClass="pagination-ys" />
                                 <PagerSettings Mode="NumericFirstLast" Position="Bottom" PageButtonCount="8" FirstPageText="First" LastPageText="Last" NextPageText="Next" PreviousPageText="Previous" />

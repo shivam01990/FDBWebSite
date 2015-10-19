@@ -29,5 +29,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="NDC_M_PRICE">
+      <EntityTypeMapping TypeName="FDBModel.NDC_M_PRICE">
+        <MappingFragment StoreEntitySet="NDC_M_PRICE">
+          <ScalarProperty Name="NPT_PRICEX" ColumnName="NPT_PRICEX" />
+          <ScalarProperty Name="NPT_DATEC" ColumnName="NPT_DATEC" />
+          <ScalarProperty Name="NPT_TYPE" ColumnName="NPT_TYPE" />
+          <ScalarProperty Name="NDC" ColumnName="NDC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

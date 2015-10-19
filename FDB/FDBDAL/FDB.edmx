@@ -16,6 +16,19 @@
           <Property Name="DiscountID" Type="int" />
           <Property Name="ProductTypeID" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FDB.dbo.NDC_M_PRICE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NDC_M_PRICE">
+          <Key>
+            <PropertyRef Name="NDC" />
+            <PropertyRef Name="NPT_TYPE" />
+            <PropertyRef Name="NPT_DATEC" />
+          </Key>
+          <Property Name="NDC" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NPT_TYPE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NPT_DATEC" Type="datetime" Nullable="false" />
+          <Property Name="NPT_PRICEX" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -34,6 +47,14 @@
         <EntityContainer Name="FDBModelStoreContainer">
           <EntitySet Name="NDC_Discounts" EntityType="Self.NDC_Discounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NDC_M_PRICE" EntityType="Self.NDC_M_PRICE" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NDC_M_PRICE].[NDC] AS [NDC], 
+    [NDC_M_PRICE].[NPT_TYPE] AS [NPT_TYPE], 
+    [NDC_M_PRICE].[NPT_DATEC] AS [NPT_DATEC], 
+    [NDC_M_PRICE].[NPT_PRICEX] AS [NPT_PRICEX]
+    FROM [dbo].[NDC_M_PRICE] AS [NDC_M_PRICE]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -57,6 +78,7 @@
         <EntityContainer Name="FDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="NDC_Discounts" EntityType="FDBModel.NDC_Discounts" />
+          <EntitySet Name="NDC_M_PRICE" EntityType="FDBModel.NDC_M_PRICE" />
         </EntityContainer>
         <EntityType Name="NDC_Discounts">
           <Key>
@@ -68,6 +90,17 @@
           <Property Name="FacilityID" Type="Int32" />
           <Property Name="DiscountID" Type="Int32" />
           <Property Name="ProductTypeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NDC_M_PRICE">
+          <Key>
+            <PropertyRef Name="NDC" />
+            <PropertyRef Name="NPT_TYPE" />
+            <PropertyRef Name="NPT_DATEC" />
+          </Key>
+          <Property Name="NDC" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NPT_TYPE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NPT_DATEC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NPT_PRICEX" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -100,6 +133,16 @@
                 <ScalarProperty Name="Discount_Percent" ColumnName="Discount_Percent" />
                 <ScalarProperty Name="NDC" ColumnName="NDC" />
                 <ScalarProperty Name="NDC_DiscountID" ColumnName="NDC_DiscountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NDC_M_PRICE">
+            <EntityTypeMapping TypeName="FDBModel.NDC_M_PRICE">
+              <MappingFragment StoreEntitySet="NDC_M_PRICE">
+                <ScalarProperty Name="NPT_PRICEX" ColumnName="NPT_PRICEX" />
+                <ScalarProperty Name="NPT_DATEC" ColumnName="NPT_DATEC" />
+                <ScalarProperty Name="NPT_TYPE" ColumnName="NPT_TYPE" />
+                <ScalarProperty Name="NDC" ColumnName="NDC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -18,6 +18,7 @@
   <EntityContainer Name="FDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="NDC_Discounts" EntityType="FDBModel.NDC_Discounts" />
+    <EntitySet Name="NDC_M_PRICE" EntityType="FDBModel.NDC_M_PRICE" />
   </EntityContainer>
   <EntityType Name="NDC_Discounts">
     <Key>
@@ -29,5 +30,16 @@
     <Property Name="FacilityID" Type="Int32" />
     <Property Name="DiscountID" Type="Int32" />
     <Property Name="ProductTypeID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NDC_M_PRICE">
+    <Key>
+      <PropertyRef Name="NDC" />
+      <PropertyRef Name="NPT_TYPE" />
+      <PropertyRef Name="NPT_DATEC" />
+    </Key>
+    <Property Name="NDC" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NPT_TYPE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NPT_DATEC" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NPT_PRICEX" Type="Decimal" Precision="10" Scale="2" />
   </EntityType>
 </Schema>
