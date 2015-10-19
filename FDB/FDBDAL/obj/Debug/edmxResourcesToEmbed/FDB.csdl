@@ -17,5 +17,17 @@
   </EntityType>
   <EntityContainer Name="FDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="NDC_Discounts" EntityType="FDBModel.NDC_Discounts" />
   </EntityContainer>
+  <EntityType Name="NDC_Discounts">
+    <Key>
+      <PropertyRef Name="NDC_DiscountID" />
+    </Key>
+    <Property Name="NDC_DiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NDC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Discount_Percent" Type="Double" Nullable="false" />
+    <Property Name="FacilityID" Type="Int32" />
+    <Property Name="DiscountID" Type="Int32" />
+    <Property Name="ProductTypeID" Type="Int32" />
+  </EntityType>
 </Schema>

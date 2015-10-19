@@ -26,5 +26,6 @@ namespace FDBDAL
         }
     
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<NDC_Discounts> NDC_Discounts { get; set; }
     }
 }

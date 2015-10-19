@@ -74,6 +74,8 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="MedicinePrice.aspx" />
+    <Content Include="NDCDiscount.aspx" />
+    <Content Include="NDCDiscounts.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.js" />
@@ -137,6 +139,20 @@
     <Compile Include="MedicinePrice.aspx.designer.cs">
       <DependentUpon>MedicinePrice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NDCDiscount.aspx.cs">
+      <DependentUpon>NDCDiscount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NDCDiscount.aspx.designer.cs">
+      <DependentUpon>NDCDiscount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NDCDiscounts.aspx.cs">
+      <DependentUpon>NDCDiscounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NDCDiscounts.aspx.designer.cs">
+      <DependentUpon>NDCDiscounts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +204,10 @@
     <ProjectReference Include="..\FDBBLL\FDBBLL.csproj">
       <Project>{f435616a-fa12-409f-99e5-a2a43fe6f0bc}</Project>
       <Name>FDBBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FDBDAL\FDBDAL.csproj">
+      <Project>{50bfe284-b6dc-4c55-a558-5f5f32a3acb5}</Project>
+      <Name>FDBDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

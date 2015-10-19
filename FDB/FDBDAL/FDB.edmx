@@ -4,7 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NDC_Discounts">
+          <Key>
+            <PropertyRef Name="NDC_DiscountID" />
+          </Key>
+          <Property Name="NDC_DiscountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NDC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Discount_Percent" Type="float" Nullable="false" />
+          <Property Name="FacilityID" Type="int" />
+          <Property Name="DiscountID" Type="int" />
+          <Property Name="ProductTypeID" Type="int" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
@@ -21,10 +32,10 @@
           <Property Name="UpdatedDate" Type="datetime" />
         </EntityType>
         <EntityContainer Name="FDBModelStoreContainer">
+          <EntitySet Name="NDC_Discounts" EntityType="Self.NDC_Discounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -45,7 +56,19 @@
         </EntityType>
         <EntityContainer Name="FDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="NDC_Discounts" EntityType="FDBModel.NDC_Discounts" />
         </EntityContainer>
+        <EntityType Name="NDC_Discounts">
+          <Key>
+            <PropertyRef Name="NDC_DiscountID" />
+          </Key>
+          <Property Name="NDC_DiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NDC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discount_Percent" Type="Double" Nullable="false" />
+          <Property Name="FacilityID" Type="Int32" />
+          <Property Name="DiscountID" Type="Int32" />
+          <Property Name="ProductTypeID" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -65,6 +88,18 @@
                 <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NDC_Discounts">
+            <EntityTypeMapping TypeName="FDBModel.NDC_Discounts">
+              <MappingFragment StoreEntitySet="NDC_Discounts">
+                <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+                <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="Discount_Percent" ColumnName="Discount_Percent" />
+                <ScalarProperty Name="NDC" ColumnName="NDC" />
+                <ScalarProperty Name="NDC_DiscountID" ColumnName="NDC_DiscountID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

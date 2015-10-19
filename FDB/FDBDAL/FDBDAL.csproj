@@ -63,6 +63,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="NDC_Discounts.cs">
+      <DependentUpon>FDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs">
       <DependentUpon>FDB.tt</DependentUpon>
