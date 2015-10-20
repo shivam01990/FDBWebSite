@@ -1,5 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="FDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FACILITY">
+    <Key>
+      <PropertyRef Name="FACILITY_KEY" />
+    </Key>
+    <Property Name="FACILITY_KEY" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CORP_KEY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DEF_FACILITY_KEY" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_TYPE" Type="nvarchar" MaxLength="100" />
+    <Property Name="FACILITY_ADDRESS" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_ADDRESS2" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_STATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_ZIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_PHONE" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_FEDERAL_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="NATIONAL_PROVIDER" Type="nvarchar" MaxLength="50" />
+    <Property Name="STATE_OPERATOR_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="STATE_PROVIDER" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACILITY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FACILITY_REGION" Type="nvarchar" MaxLength="100" />
+    <Property Name="FAC_TYPE" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROVIDER_TYPE" Type="nvarchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="NDC_Discounts">
     <Key>
       <PropertyRef Name="NDC_DiscountID" />
@@ -40,6 +64,7 @@ warning 6002: The table/view 'FDB.dbo.NDC_M_PRICE' does not have a primary key d
     <Property Name="UpdatedDate" Type="datetime" />
   </EntityType>
   <EntityContainer Name="FDBModelStoreContainer">
+    <EntitySet Name="FACILITY" EntityType="Self.FACILITY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NDC_Discounts" EntityType="Self.NDC_Discounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NDC_M_PRICE" EntityType="Self.NDC_M_PRICE" store:Type="Tables" store:Schema="dbo">

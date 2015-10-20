@@ -96,7 +96,7 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><%=FDBBLL.authHelper.Instance.GetLogedInUserFromCookie().Name.ToString() %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                
+
                 <li class="divider"></li>
                 <li>
                     <a href="<%=Page.ResolveUrl("~") %>Logout.aspx"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
@@ -111,8 +111,17 @@
                 <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-plus-square-o"></i>Medicine Price</a>
             </li>
             <li>
-                <a href="<%=Page.ResolveUrl("~") %>NDCDiscounts.aspx"><i class="fa fa-fw fa-money"></i>NDC Discount</a>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-money"></i>NDC Discount <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo" <%= HttpContext.Current.Request.Url.AbsolutePath=="/NDCDiscounts.aspx"?"  ":" class=\"collapse\" " %>>
+                    <li>
+                        <a href="<%=Page.ResolveUrl("~") %>NDCDiscounts.aspx">NDC Discounts</a>
+                    </li>
+                    <li>
+                       <a href="<%=Page.ResolveUrl("~") %>NDCDiscount.aspx">Add/Edit NDC Discount</a>
+                    </li>
+                </ul>
             </li>
+            
             <li>
                 <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-star-o"></i>Facility</a>
             </li>

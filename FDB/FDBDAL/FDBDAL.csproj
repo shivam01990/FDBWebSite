@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FACILITY.cs">
+      <DependentUpon>FDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="FDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

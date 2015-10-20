@@ -39,5 +39,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FACILITies">
+      <EntityTypeMapping TypeName="FDBModel.FACILITY">
+        <MappingFragment StoreEntitySet="FACILITY">
+          <ScalarProperty Name="PROVIDER_TYPE" ColumnName="PROVIDER_TYPE" />
+          <ScalarProperty Name="FAC_TYPE" ColumnName="FAC_TYPE" />
+          <ScalarProperty Name="FACILITY_REGION" ColumnName="FACILITY_REGION" />
+          <ScalarProperty Name="FACILITY_ID" ColumnName="FACILITY_ID" />
+          <ScalarProperty Name="STATE_PROVIDER" ColumnName="STATE_PROVIDER" />
+          <ScalarProperty Name="STATE_OPERATOR_NO" ColumnName="STATE_OPERATOR_NO" />
+          <ScalarProperty Name="NATIONAL_PROVIDER" ColumnName="NATIONAL_PROVIDER" />
+          <ScalarProperty Name="FACILITY_FEDERAL_ID" ColumnName="FACILITY_FEDERAL_ID" />
+          <ScalarProperty Name="FACILITY_PHONE" ColumnName="FACILITY_PHONE" />
+          <ScalarProperty Name="FACILITY_FAX" ColumnName="FACILITY_FAX" />
+          <ScalarProperty Name="FACILITY_ZIP" ColumnName="FACILITY_ZIP" />
+          <ScalarProperty Name="FACILITY_STATE" ColumnName="FACILITY_STATE" />
+          <ScalarProperty Name="FACILITY_CITY" ColumnName="FACILITY_CITY" />
+          <ScalarProperty Name="FACILITY_ADDRESS2" ColumnName="FACILITY_ADDRESS2" />
+          <ScalarProperty Name="FACILITY_ADDRESS" ColumnName="FACILITY_ADDRESS" />
+          <ScalarProperty Name="FACILITY_TYPE" ColumnName="FACILITY_TYPE" />
+          <ScalarProperty Name="DEF_FACILITY_KEY" ColumnName="DEF_FACILITY_KEY" />
+          <ScalarProperty Name="CORP_KEY" ColumnName="CORP_KEY" />
+          <ScalarProperty Name="FACILITY_KEY" ColumnName="FACILITY_KEY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="authHelper.cs" />
     <Compile Include="CookieSecurityProvider.cs" />
+    <Compile Include="FacilityService.cs" />
     <Compile Include="LoggedInUser.cs" />
     <Compile Include="NDCDiscountsServices.cs" />
     <Compile Include="NDC_M_PriceService.cs" />

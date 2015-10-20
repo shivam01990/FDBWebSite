@@ -19,6 +19,7 @@
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="NDC_Discounts" EntityType="FDBModel.NDC_Discounts" />
     <EntitySet Name="NDC_M_PRICE" EntityType="FDBModel.NDC_M_PRICE" />
+    <EntitySet Name="FACILITies" EntityType="FDBModel.FACILITY" />
   </EntityContainer>
   <EntityType Name="NDC_Discounts">
     <Key>
@@ -41,5 +42,29 @@
     <Property Name="NPT_TYPE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NPT_DATEC" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="NPT_PRICEX" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="FACILITY">
+    <Key>
+      <PropertyRef Name="FACILITY_KEY" />
+    </Key>
+    <Property Name="FACILITY_KEY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CORP_KEY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DEF_FACILITY_KEY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_ADDRESS2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_ZIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_FEDERAL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NATIONAL_PROVIDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATE_OPERATOR_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATE_PROVIDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACILITY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FACILITY_REGION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FAC_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROVIDER_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
