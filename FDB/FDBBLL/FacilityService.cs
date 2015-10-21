@@ -16,7 +16,7 @@ namespace FDBBLL
        {
            using(FDBEntities db = new FDBEntities())
 	        {
-                return db.FACILITies.Where(u=>u.FACILITY_KEY==FACILITY_KEY).ToList();
+                return db.FACILITies.Where(u => u.FACILITY_KEY == FACILITY_KEY || FACILITY_KEY=="").ToList();
 	        }
            
        }
