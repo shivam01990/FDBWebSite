@@ -20,6 +20,7 @@
     <EntitySet Name="NDC_Discounts" EntityType="FDBModel.NDC_Discounts" />
     <EntitySet Name="NDC_M_PRICE" EntityType="FDBModel.NDC_M_PRICE" />
     <EntitySet Name="FACILITies" EntityType="FDBModel.FACILITY" />
+    <EntitySet Name="ProductTypes" EntityType="FDBModel.ProductType" />
   </EntityContainer>
   <EntityType Name="NDC_Discounts">
     <Key>
@@ -38,10 +39,10 @@
       <PropertyRef Name="NPT_TYPE" />
       <PropertyRef Name="NPT_DATEC" />
     </Key>
-    <Property Name="NDC" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="NPT_TYPE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NDC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="NPT_TYPE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
     <Property Name="NPT_DATEC" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="NPT_PRICEX" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="NPT_PRICEX" Type="Decimal" Precision="11" Scale="5" />
   </EntityType>
   <EntityType Name="FACILITY">
     <Key>
@@ -66,5 +67,12 @@
     <Property Name="FACILITY_REGION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="FAC_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="PROVIDER_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="ProductTypeID" />
+    </Key>
+    <Property Name="ProductTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

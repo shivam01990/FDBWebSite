@@ -123,10 +123,10 @@
             </li>
             
             <li>
-                <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-star-o"></i>Facility</a>
+                <a <%= HttpContext.Current.Request.Url.AbsolutePath=="/Facilities.aspx"?" class=\"active\" ":" " %> href="<%=Page.ResolveUrl("~") %>Facilities.aspx"><i class="fa fa-fw fa-star-o"></i>Facility</a>
             </li>
             <li>
-                <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-suitcase"></i>Product Type </a>
+                <a href="<%=Page.ResolveUrl("~") %>ProductTypes.aspx"><i class="fa fa-fw fa-suitcase"></i>Product Type </a>
             </li>
             <li>
                 <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-upload"></i>Upload File </a>

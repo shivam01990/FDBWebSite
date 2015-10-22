@@ -78,6 +78,7 @@
     <Content Include="MedicinePrice.aspx" />
     <Content Include="NDCDiscount.aspx" />
     <Content Include="NDCDiscounts.aspx" />
+    <Content Include="ProductTypes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.js" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="NDCDiscounts.aspx.designer.cs">
       <DependentUpon>NDCDiscounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTypes.aspx.cs">
+      <DependentUpon>ProductTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTypes.aspx.designer.cs">
+      <DependentUpon>ProductTypes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

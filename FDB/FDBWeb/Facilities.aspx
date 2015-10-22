@@ -5,7 +5,7 @@
         <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">NDC Discount
+            <h1 class="page-header">Facilities
             </h1>
             <%-- <ol class="breadcrumb">
                 <li class="active">
@@ -18,7 +18,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading  clearfix">
                         <div class="col-md-5">
-                            Medicines   
+                            Facilities   
                         </div>
                         <asp:LinkButton ID="lnkAddNew" runat="server" ToolTip="Add New NDC Discount" PostBackUrl="~/NDCDiscount.aspx" CssClass="btn btn-default btn-xs pull-right">  <i class="fa fa-plus"></i></asp:LinkButton>
                     </div>
@@ -68,14 +68,14 @@
                                         <HeaderStyle CssClass="col-md-1" />
                                         <ItemStyle CssClass="col-md-1" />
                                         <ItemTemplate>
-                                            <%#Eval("FACILITY_KEY").ToString() %>
+                                            <%#Eval("ProductTypeID").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="CORP_KEY">
                                         <HeaderStyle CssClass="col-md-2" />
                                         <ItemStyle CssClass="col-md-2" />
                                         <ItemTemplate>
-                                            <%#Eval("CORP_KEY")==null?"":Eval("CORP_KEY").ToString() %>
+                                            <%#Eval("Description")==null?"":Eval("Description").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="DEF_FACILITY_KEY">
@@ -106,7 +106,7 @@
                                             <%#Eval("FACILITY_ADDRESS2")==null?"":Eval("FACILITY_ADDRESS2").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="FACILITY_CITY">
+                                    <%--<asp:TemplateField HeaderText="FACILITY_CITY">
                                         <HeaderStyle CssClass="col-md-1" />
                                         <ItemStyle CssClass="col-md-1" />
                                         <ItemTemplate>
@@ -188,7 +188,7 @@
                                         <ItemTemplate>
                                             <%#Eval("PROVIDER_TYPE")==null?"":Eval("PROVIDER_TYPE").ToString() %>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                      <asp:TemplateField HeaderText="Action">
                                     <ItemTemplate>
                                         <a href="Facility.aspx?id=<%# Eval("FACILITY_KEY").ToString() %>" class="btn btn-primary">Edit</a>

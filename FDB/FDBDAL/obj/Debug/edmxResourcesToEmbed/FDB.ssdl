@@ -35,18 +35,23 @@
     <Property Name="DiscountID" Type="int" />
     <Property Name="ProductTypeID" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'FDB.dbo.NDC_M_PRICE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="NDC_M_PRICE">
     <Key>
       <PropertyRef Name="NDC" />
       <PropertyRef Name="NPT_TYPE" />
       <PropertyRef Name="NPT_DATEC" />
     </Key>
-    <Property Name="NDC" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NPT_TYPE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NDC" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="NPT_TYPE" Type="varchar" MaxLength="2" Nullable="false" />
     <Property Name="NPT_DATEC" Type="datetime" Nullable="false" />
-    <Property Name="NPT_PRICEX" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="NPT_PRICEX" Type="numeric" Precision="11" Scale="5" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="ProductTypeID" />
+    </Key>
+    <Property Name="ProductTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -66,14 +71,8 @@ warning 6002: The table/view 'FDB.dbo.NDC_M_PRICE' does not have a primary key d
   <EntityContainer Name="FDBModelStoreContainer">
     <EntitySet Name="FACILITY" EntityType="Self.FACILITY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NDC_Discounts" EntityType="Self.NDC_Discounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NDC_M_PRICE" EntityType="Self.NDC_M_PRICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="NDC_M_PRICE" EntityType="Self.NDC_M_PRICE" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [NDC_M_PRICE].[NDC] AS [NDC], 
-    [NDC_M_PRICE].[NPT_TYPE] AS [NPT_TYPE], 
-    [NDC_M_PRICE].[NPT_DATEC] AS [NPT_DATEC], 
-    [NDC_M_PRICE].[NPT_PRICEX] AS [NPT_PRICEX]
-    FROM [dbo].[NDC_M_PRICE] AS [NDC_M_PRICE]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>
