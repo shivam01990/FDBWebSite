@@ -70,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddEditProductType.aspx" />
     <Content Include="Controls\Navigation.ascx" />
     <Content Include="Facilities.aspx" />
     <Content Include="font-awesome\css\font-awesome.css" />
@@ -109,6 +110,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditProductType.aspx.cs">
+      <DependentUpon>AddEditProductType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditProductType.aspx.designer.cs">
+      <DependentUpon>AddEditProductType.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Navigation.ascx.cs">
       <DependentUpon>Navigation.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -20,5 +20,34 @@ namespace FDBBLL
             }
             return rType;
         }
+
+        public int CreateUpdateProductTypeServices(ProductType ud)
+        {
+            int ProductTypeID = 0;
+            using (FDBEntities db = new FDBEntities())
+            {
+                if (ud.ProductTypeID > 0)
+                {
+                    ProductType temp = db.ProductTypes.Where(u => u.ProductTypeID == ud.ProductTypeID).FirstOrDefault();
+
+                    if (temp != null)
+                    {
+                        temp.Description = ud.Description;                       
+                    }
+                }
+                else
+                {
+                    db.ProductTypes.Add(ud);
+                }
+
+                int x = db.SaveChanges();
+                if (x > 0)
+                {
+                    ProductTypeID = ud.ProductTypeID;
+                }
+            }
+
+            return ProductTypeID;
+        }
     }
 }

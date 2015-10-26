@@ -112,21 +112,30 @@
             </li>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-money"></i>NDC Discount <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" <%= HttpContext.Current.Request.Url.AbsolutePath=="/NDCDiscounts.aspx"?"  ":" class=\"collapse\" " %>>
+                <ul id="demo" <%= HttpContext.Current.Request.Url.AbsolutePath.Contains("NDCDiscount")?"  ":" class=\"collapse\" " %>>
                     <li>
                         <a href="<%=Page.ResolveUrl("~") %>NDCDiscounts.aspx">NDC Discounts</a>
                     </li>
                     <li>
-                       <a href="<%=Page.ResolveUrl("~") %>NDCDiscount.aspx">Add/Edit NDC Discount</a>
+                        <a href="<%=Page.ResolveUrl("~") %>NDCDiscount.aspx">Add/Edit NDC Discount</a>
                     </li>
                 </ul>
             </li>
-            
+
             <li>
                 <a <%= HttpContext.Current.Request.Url.AbsolutePath=="/Facilities.aspx"?" class=\"active\" ":" " %> href="<%=Page.ResolveUrl("~") %>Facilities.aspx"><i class="fa fa-fw fa-star-o"></i>Facility</a>
             </li>
+            
             <li>
-                <a href="<%=Page.ResolveUrl("~") %>ProductTypes.aspx"><i class="fa fa-fw fa-suitcase"></i>Product Type </a>
+                <a  href="javascript:;" data-toggle="collapse" data-target="#Producttype"><i class="fa fa-fw fa-suitcase"></i>Product Type <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="Producttype" <%= HttpContext.Current.Request.Url.AbsolutePath.Contains("Product")?"  ":" class=\"collapse\" " %>>
+                    <li>
+                        <a href="<%=Page.ResolveUrl("~") %>ProductTypes.aspx">Product Types</a>
+                    </li>
+                    <li>
+                        <a href="<%=Page.ResolveUrl("~") %>AddEditProductType.aspx">Add / Edit Product Type</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="<%=Page.ResolveUrl("~") %>UploadFile.aspx"><i class="fa fa-fw fa-upload"></i>Upload File </a>
