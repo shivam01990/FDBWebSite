@@ -23,5 +23,37 @@ namespace FDBBLL
             }
             return rType;
         }
+
+        public int CreateUpdateNDCDiscount(NDC_Discounts ud)
+        {
+            int NDC_DiscountID = 0;
+            using (FDBEntities db = new FDBEntities())
+            {
+                if (ud.NDC_DiscountID > 0)
+                {
+                    NDC_Discounts temp = db.NDC_Discounts.Where(u => u.NDC_DiscountID == ud.NDC_DiscountID).FirstOrDefault();
+
+                    if (temp != null)
+                    {
+                        temp.NDC = ud.NDC;
+                        temp.Discount_Percent = ud.Discount_Percent;
+                        temp.FacilityID = ud.FacilityID;
+                        temp.ProductTypeID = ud.ProductTypeID;
+                    }
+                }
+                else
+                {
+                    db.NDC_Discounts.Add(ud);
+                }
+
+                int x = db.SaveChanges();
+                if (x > 0)
+                {
+                    NDC_DiscountID = ud.NDC_DiscountID;
+                }
+            }
+
+            return NDC_DiscountID;
+        }
     }
 }

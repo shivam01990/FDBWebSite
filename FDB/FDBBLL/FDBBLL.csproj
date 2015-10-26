@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="authHelper.cs" />
+    <Compile Include="Common.cs" />
     <Compile Include="CookieSecurityProvider.cs" />
     <Compile Include="FacilityService.cs" />
     <Compile Include="LoggedInUser.cs" />

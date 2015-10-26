@@ -68,14 +68,14 @@
                                         <HeaderStyle CssClass="col-md-1" />
                                         <ItemStyle CssClass="col-md-1" />
                                         <ItemTemplate>
-                                            <%#Eval("ProductTypeID").ToString() %>
+                                            <%#Eval("FACILITY_KEY").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="CORP_KEY">
                                         <HeaderStyle CssClass="col-md-2" />
                                         <ItemStyle CssClass="col-md-2" />
                                         <ItemTemplate>
-                                            <%#Eval("Description")==null?"":Eval("Description").ToString() %>
+                                            <%#Eval("CORP_KEY")==null?"":Eval("CORP_KEY").ToString() %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="DEF_FACILITY_KEY">

@@ -225,3 +225,21 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+
+.pagination-ys span, .pagination-ys a {
+    position: relative;
+    padding: 5px 8px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #dd4814;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    margin-left: -1px;
+    color: #333;
+}
+
+.pagination-ys span {
+    background-color: #337ab7;
+    color: #fff;
+}

@@ -129,7 +129,7 @@
                 <a href="<%=Page.ResolveUrl("~") %>ProductTypes.aspx"><i class="fa fa-fw fa-suitcase"></i>Product Type </a>
             </li>
             <li>
-                <a href="<%=Page.ResolveUrl("~") %>MedicinePrice.aspx"><i class="fa fa-fw fa-upload"></i>Upload File </a>
+                <a href="<%=Page.ResolveUrl("~") %>UploadFile.aspx"><i class="fa fa-fw fa-upload"></i>Upload File </a>
             </li>
         </ul>
     </div>

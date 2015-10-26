@@ -12,3 +12,4 @@ D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\FDBDAL.pdb
 D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.xml
 D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.SqlServer.dll
 D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\EntityFramework.SqlServer.xml
+D:\Development Area\FDBWebSite\FDB\FDBWeb\bin\LumenWorks.Framework.IO.xml

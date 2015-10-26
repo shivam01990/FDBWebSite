@@ -77,7 +77,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Action">
                                         <ItemTemplate>
-                                            <a href="Facility.aspx?id=<%# Eval("ProductTypeID").ToString() %>" class="btn btn-primary">Edit</a>
+                                            <a href="ProductType.aspx?id=<%# Eval("ProductTypeID").ToString() %>" class="btn btn-primary">Edit</a>
                                             <asp:LinkButton ID="LnkDelete" Text="Delete" runat="server" CssClass="btn btn-danger"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>

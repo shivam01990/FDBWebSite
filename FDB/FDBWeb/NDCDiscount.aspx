@@ -25,28 +25,35 @@
                                 <div class="form-group">
                                     <label class="control-label" for="<%=txtNDC.ClientID %>">NDC</label>
                                     <asp:TextBox ID="txtNDC" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="valgrp" ControlToValidate="txtNDC" runat="server" ForeColor="Red" Display="Dynamic" ErrorMessage="Please input NDC."></asp:RequiredFieldValidator>
+
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="<%=txtDiscount.ClientID %>">Discount %</label>
                                     <asp:TextBox ID="txtDiscount" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="valgrp" ControlToValidate="txtDiscount" runat="server" ForeColor="Red" Display="Dynamic" ErrorMessage="Please input Discount."></asp:RequiredFieldValidator>
+
                                 </div>
-                                <div class="form-group">
+                                <%--<div class="form-group">
                                     <label class="control-label" for="<%=txtAdditionalDiscount.ClientID %>">Additional Discount %</label>
                                     <asp:TextBox ID="txtAdditionalDiscount" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="<%=ddlFacility.ClientID %>">Facility</label>
-                                    <asp:DropDownList ID="ddlFacility" CssClass="form-control" runat="server"></asp:DropDownList>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="<%=txtAdditionalDiscount.ClientID %>">Product Type</label>
-                                    <asp:DropDownList ID="ddlProductType" CssClass="form-control" runat="server"></asp:DropDownList>
-                                </div>
+                                </div>--%>
+                                <label class="control-label" for="<%=ddlFacility.ClientID %>">Facility</label>
+                                <asp:DropDownList ID="ddlFacility" CssClass="form-control" runat="server"></asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorFacility" ValidationGroup="valgrp" ControlToValidate="ddlFacility" InitialValue="0" runat="server" ForeColor="Red" Display="Dynamic" ErrorMessage="Please Select Facility."></asp:RequiredFieldValidator>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="<%=ddlProductType.ClientID %>">Product Type</label>
+                                <asp:DropDownList ID="ddlProductType" CssClass="form-control" runat="server"></asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="valgrp" ControlToValidate="ddlProductType" InitialValue="0" runat="server" ForeColor="Red" Display="Dynamic" ErrorMessage="Please Select Product Type."></asp:RequiredFieldValidator>
+
                             </div>
                         </div>
                     </div>
+
                     <p>
-                        <asp:Button ID="btnSave" ValidationGroup="valgrp" CssClass="btn btn-primary" Text="Save" runat="server" />
+                        <asp:Button ID="btnSave" ValidationGroup="valgrp" CssClass="btn btn-primary" Text="Save" runat="server" OnClick="btnSave_Click" />
                         <asp:Button ID="btnDelete" CssClass="btn btn-warning" Text="Delete" Visible="false" runat="server" />
                     </p>
                 </div>
