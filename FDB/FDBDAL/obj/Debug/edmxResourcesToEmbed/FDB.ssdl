@@ -24,6 +24,16 @@
     <Property Name="FAC_TYPE" Type="nvarchar" MaxLength="100" />
     <Property Name="PROVIDER_TYPE" Type="nvarchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="MedicineID" />
+    </Key>
+    <Property Name="MedicineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NDC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PriceType" Type="bigint" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="NDC_Discounts">
     <Key>
       <PropertyRef Name="NDC_DiscountID" />
@@ -70,6 +80,7 @@
   </EntityType>
   <EntityContainer Name="FDBModelStoreContainer">
     <EntitySet Name="FACILITY" EntityType="Self.FACILITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NDC_Discounts" EntityType="Self.NDC_Discounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NDC_M_PRICE" EntityType="Self.NDC_M_PRICE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />

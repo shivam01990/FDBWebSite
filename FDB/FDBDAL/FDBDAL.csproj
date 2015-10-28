@@ -66,6 +66,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Medicine.cs">
+      <DependentUpon>FDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="NDC_Discounts.cs">
       <DependentUpon>FDB.tt</DependentUpon>
     </Compile>

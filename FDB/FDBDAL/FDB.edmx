@@ -29,6 +29,16 @@
           <Property Name="FAC_TYPE" Type="nvarchar" MaxLength="100" />
           <Property Name="PROVIDER_TYPE" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="MedicineID" />
+          </Key>
+          <Property Name="MedicineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NDC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PriceType" Type="bigint" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="NDC_Discounts">
           <Key>
             <PropertyRef Name="NDC_DiscountID" />
@@ -75,6 +85,7 @@
         </EntityType>
         <EntityContainer Name="FDBModelStoreContainer">
           <EntitySet Name="FACILITY" EntityType="Self.FACILITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NDC_Discounts" EntityType="Self.NDC_Discounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NDC_M_PRICE" EntityType="Self.NDC_M_PRICE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
@@ -105,6 +116,7 @@
           <EntitySet Name="NDC_M_PRICE" EntityType="FDBModel.NDC_M_PRICE" />
           <EntitySet Name="FACILITies" EntityType="FDBModel.FACILITY" />
           <EntitySet Name="ProductTypes" EntityType="FDBModel.ProductType" />
+          <EntitySet Name="Medicines" EntityType="FDBModel.Medicine" />
         </EntityContainer>
         <EntityType Name="NDC_Discounts">
           <Key>
@@ -158,6 +170,16 @@
           </Key>
           <Property Name="ProductTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="MedicineID" />
+          </Key>
+          <Property Name="MedicineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NDC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriceType" Type="Int64" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -233,6 +255,17 @@
               <MappingFragment StoreEntitySet="ProductType">
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicines">
+            <EntityTypeMapping TypeName="FDBModel.Medicine">
+              <MappingFragment StoreEntitySet="Medicine">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+                <ScalarProperty Name="NDC" ColumnName="NDC" />
+                <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

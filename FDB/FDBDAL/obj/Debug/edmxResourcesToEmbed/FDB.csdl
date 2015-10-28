@@ -21,6 +21,7 @@
     <EntitySet Name="NDC_M_PRICE" EntityType="FDBModel.NDC_M_PRICE" />
     <EntitySet Name="FACILITies" EntityType="FDBModel.FACILITY" />
     <EntitySet Name="ProductTypes" EntityType="FDBModel.ProductType" />
+    <EntitySet Name="Medicines" EntityType="FDBModel.Medicine" />
   </EntityContainer>
   <EntityType Name="NDC_Discounts">
     <Key>
@@ -74,5 +75,15 @@
     </Key>
     <Property Name="ProductTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="MedicineID" />
+    </Key>
+    <Property Name="MedicineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NDC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriceType" Type="Int64" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
 </Schema>

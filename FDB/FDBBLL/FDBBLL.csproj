@@ -50,10 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="authHelper.cs" />
+    <Compile Include="clsMedicine.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CookieSecurityProvider.cs" />
     <Compile Include="FacilityService.cs" />
     <Compile Include="LoggedInUser.cs" />
+    <Compile Include="MedicineService.cs" />
     <Compile Include="NDCDiscountsServices.cs" />
     <Compile Include="NDC_M_PriceService.cs" />
     <Compile Include="ProductTypeServices.cs" />
